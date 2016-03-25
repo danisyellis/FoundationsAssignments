@@ -1,0 +1,55 @@
+body {
+	background: linear-gradient(to bottom, white 20%, yellow);
+	text-align: center;
+	padding: 35px 50px;
+}
+
+#logo {
+	font-size: 35px;
+	text-align: left;
+	color: rgb(255,170,255);
+}
+img {
+	max-width: 60px;
+	height: auto;
+}
+
+h1 {
+	font-size: 45px;
+	margin-top: 10px;
+	padding: 20px 0px 15px 0px;
+	border: 8px solid;
+	background-color: lightgray;
+}
+
+form {
+	font-size: 1.5em;
+}
+input {
+	width: 40px;
+	height: 30px;
+}
+#submit {
+	padding: 10px 20px;
+	border: 1px solid;
+	border-radius: 40%;
+	display: block;
+	background-color: #bf80ff;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	font-size: 1em;
+}
+
+#buttons {
+	display: inline-block;
+	margin-top: 20px;
+}
+button {
+	font-size: 15px;
+}
+
+h2 {
+	font-size: 19em;
+	margin: 0px;
+}
