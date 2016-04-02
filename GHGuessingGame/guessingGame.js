@@ -1,11 +1,12 @@
+var playersGuess = 0
+var winningNumber
+
 jQuery(document).ready(function(){
 /* **** Global Variables **** */
 // try to elminate these global variables in your project, these are here just to start.
 
-var playersGuess = 0
-    winningNumber = generateWinningNumber();
 
-
+winningNumber = generateWinningNumber();
 
 /* **** Guessing Game Functions **** */
 
@@ -18,12 +19,12 @@ function generateWinningNumber(){
 // Fetch the Players Guess
 
 function playersGuessSubmission(event){
-	var stringGuess = $("#guess").val();
+		playersGuess = $("#guess").val();
 		$("#guess").val("");
+		console.log(playersGuess)
 }
 
 // Determine if the next guess should be a lower or higher number
-
 function lowerOrHigher(){
 	// add code here
 }
@@ -31,7 +32,7 @@ function lowerOrHigher(){
 // Check if the Player's Guess is the winning number 
 
 function checkGuess(){
-	// add code here
+	
 }
 
 // Create a provide hint button that provides additional clues to the "Player"
@@ -52,6 +53,7 @@ function playAgain(){
 /* **** Event Listeners/Handlers ****  */
 
 	$("#submit").on("click", playersGuessSubmission)
+
 
 })
 
