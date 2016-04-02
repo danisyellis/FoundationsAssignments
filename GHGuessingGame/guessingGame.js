@@ -38,16 +38,17 @@ function checkGuess(){
 	} else if(playersGuess < winningNumber) {
 		$("h1").after("<h3>Too low!</h3>")
 	}	
-	guessesRemaining =guessesRemaining - 1;
 	showGuessesRemaining();
 }
 
 //
 function showGuessesRemaining(){
 		if(guessesRemaining > 0) {
+			guessesRemaining--
 			$("p").text("You guessed " + playersGuess + " and you have " + guessesRemaining + " guesses remaining.");
-		} else {
-			$("body").css({"background-color": "red"})
+		} 
+		if (guessesRemaining === 0) {
+			$("body").css("background", "linear-gradient(to bottom, white 10%, red)")
 			$("h1").text("You Lost")
 		}
 }
