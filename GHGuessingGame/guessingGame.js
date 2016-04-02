@@ -19,10 +19,7 @@ function generateWinningNumber(){
 
 function playersGuessSubmission(event){
 	var stringGuess = $("#guess").val();
-		$("#guess").html("");
-	//playersGuess = document.getElementById('guess').value;
-    //document.getElementById('guess').value = "";
-    console.log(stringGuess)
+		$("#guess").val("");
 }
 
 // Determine if the next guess should be a lower or higher number
