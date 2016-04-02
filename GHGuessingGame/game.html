@@ -3,6 +3,9 @@
 	<head>
 		<title>Dani's Guessing game</title>
 		<link href="gameStyle.css" rel="stylesheet" media="screen">
+		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script src="guessingGame.js"></script>
 	</head>
 	<body>
 		<header> 
@@ -14,11 +17,11 @@
 		
 		<h1> Guessing Game </h1>
 
-		<form>
-			<p>Enter a number between 1 and 50</p>
-			<input type="number" min="1" max="50" placeholder="1-50"></input>
+		
+			<p>Enter a number between 1 and 100</p>
+			<input id="guess" type="number" min="1" max="100" placeholder="1-100"></input>
 			<button id="submit" type="submit">Submit Your Guess</button>
-		</form>
+		
 		<section id= "buttons">
 			<button>Play Again</button>
 			<button>Give Me A Hint</button>
