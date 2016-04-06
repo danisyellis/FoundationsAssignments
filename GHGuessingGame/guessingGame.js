@@ -22,6 +22,10 @@ function generateWinningNumber(){
 
 function playersGuessSubmission(event){
 		playersGuess = $("#guess").val();
+		if(playersGuess > 100 || playersGuess< 1 || isNaN(playersGuess) === true) {
+			alert("Please guess a number between 1 and 100.");
+			return
+		}
 		$("#guess").val("");
 		checkGuess()
 }
