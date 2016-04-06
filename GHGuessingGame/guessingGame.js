@@ -1,6 +1,7 @@
 var playersGuess = 0
 var winningNumber
 var guessesRemaining = 5;
+var Guesses = [];
 
 jQuery(document).ready(function(){
 /* **** Global Variables **** */
@@ -22,7 +23,6 @@ function generateWinningNumber(){
 function playersGuessSubmission(event){
 		playersGuess = $("#guess").val();
 		$("#guess").val("");
-		console.log(playersGuess)
 		checkGuess()
 }
 
@@ -34,18 +34,37 @@ function checkGuess(){
 		$("h1").text("Winner!");
 		$("h1").css({"font-style": "italic", "font-size": "65px", "background-color": "#9900ff"})
 	} else if(playersGuess > winningNumber) {
-		$("h1").after("<h3>You're too high</h3>")
+		$("h1").after("<h3>You're too high with "+playersGuess+ "</h3>");
+		checkSame(Guesses);
 	} else if(playersGuess < winningNumber) {
-		$("h1").after("<h3>Too low!</h3>")
+		$("h1").after("<h3>"+playersGuess+ " is too low!</h3>");
+		checkSame(Guesses);
 	}	
 	showGuessesRemaining();
+}
+
+//check if Player's Guess is a repeat
+function checkSame(arr){
+	for(var i=0; i<arr.length; i++) {
+		if(arr[i] === playersGuess) {
+			if(playersGuess === []) {
+				return;
+			}
+			else {
+			alert("You already guessed that!")
+			guessesRemaining++
+			return;
+			}
+		}
+	}
+	Guesses.push(playersGuess);
 }
 
 //
 function showGuessesRemaining(){
 		if(guessesRemaining > 0) {
 			guessesRemaining--
-			$("p").text("You guessed " + playersGuess + " and you have " + guessesRemaining + " guesses remaining.");
+			$("p").text("You have " + guessesRemaining + " guesses remaining.");
 		} 
 		if (guessesRemaining === 0) {
 			$("body").css("background", "linear-gradient(to bottom, white 10%, red)")
